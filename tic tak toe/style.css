@@ -1,0 +1,151 @@
+:root {
+  --bg-color: #F3F4F6;       /* The Light Gray Background */
+  --box-color: #FFFFFF;      /* The White Box */
+  --text-color: #1F2937;     /* The Dark Text */
+  --x-color: #FF6B6B;        /* Indigo for Player X */
+  --o-color: #10B981;        
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#heading{
+    margin-top: 50px;
+}
+body{
+    background-color: #F4F6F8;
+    text-align: center;
+}
+
+.container{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.game{
+    height: 60vmin;
+    width: 60vmin;
+    gap: 1.5vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+.box{
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    background-color: #16213E;
+    color: var(--text-color);
+    font-size: 10vmin;
+    font-weight: bold;
+    user-select: none;
+}
+
+
+.box:not(:disabled):hover {
+  background-color: #F9FAFB;
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); 
+  cursor: pointer; 
+}
+
+#reset-btn{
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color:#1F2937 ;
+    border-radius: 1rem;
+    color: aliceblue;
+    border: none;
+    margin: 10px;
+    transition: all 0.2s ease;
+}
+
+#newgame-btn{
+    padding: 1rem;
+    font-size: 1.3rem;
+    background-color:#1F2937 ;
+    border-radius: 1rem;
+    color: aliceblue;
+    border: none;
+    margin: 10px;
+    transition: all 0.2s ease;
+}
+
+#msg{
+    margin-bottom: 20px;
+}
+.hide{
+    display: none;
+}
+.x-color{
+    color: var(--x-color)
+}
+.o-color{
+    color: #10B981;
+}
+
+#reset-btn:hover, #newgame-btn:hover {
+  background-color: #374151;
+  transform: translateY(-2px); 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  cursor: pointer; 
+  transition: all 0.2s ease;
+}
+
+#msg {
+    font-size: 3vmin;
+    font-weight: 800; 
+    color: #1F2937; 
+    margin-bottom: 2vmin;
+    text-transform: uppercase;
+    letter-spacing: 2px; 
+    animation: popIn 0.4s ease-out; 
+}
+
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.winner-highlight {
+    background-color: #2a3b5c;
+    transform: scale(1.05); 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); 
+    z-index: 10; 
+    transition: all 0.3s ease; 
+}
+
+
+@media (max-width: 600px) {
+    .game {
+        width: 90vw;  
+        height: 90vw;
+        gap: 2vw;
+    }
+
+    .box {
+        width: 28vw; 
+        height: 28vw;
+        font-size: 15vw; 
+        border-radius: 0.75rem; 
+    }
+
+    #msg {
+        font-size: 6vw; 
+    }
+
+    #reset-btn, #newgame-btn {
+        font-size: 1rem; 
+        padding: 0.8rem 1.2rem;
+    }
+}
